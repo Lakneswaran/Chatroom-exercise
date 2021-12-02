@@ -17,5 +17,14 @@ var counter = 1;
      
     console.log(counter+' someone connected');
     counter += 1 ;
+
+    socket.on('sendToAll', (message) =>{
+        io.emit("displayMessage", (message));
+    });
+
+    socket.on('sendToMe', (message) =>{
+        socket.emit("displayMessage", (message)); 
+    });
 });
+
 

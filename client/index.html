@@ -5,31 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="/socket.io/socket.io.js"></script>
+  
+    <link rel="stylesheet" href="styles.css">
+    
 
 </head>
 <body>
-    <script>let socket = io.connect();</script>
+   
     <header style="position:absolute; display:inline-flex;  left: calc(50% - 15%);">
          <h2 style="color:red;">Chat &ensp;<h1>O</h1><h4 style="color:red; padding-left: 5px;">la</h4></h2>
     </header>
 
     <div class="container">
-        <div id=#inputfield>
-            <form>
-                <label> <input type="text" name="text"  value=""> <input type="text" name="text"  value=""></label>
-            </form>
+        <div id="inputfield">
+            
+                <input id="message" placeholder="message" type="text" name="text">
+            
         </div>
-        <div id=#send>
+        <div id="send">
 
-            <input type="button" value="Send">
-
+            <button id="btnSendToAll">Send to ALL</button>
+            <button id="btnSendToMe">Send to me</button>
 
         </div>
         <div id="target">
 
         </div>
     </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+
 
 
 </body>
