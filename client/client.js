@@ -12,7 +12,7 @@ bSendToAll.addEventListener('click', sendToAll);
 
 // });
 
-var message = document.querySelector('#message');
+// var message = document.querySelector('#message');
 
 
 function sendToMe(){

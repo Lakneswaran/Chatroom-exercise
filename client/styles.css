@@ -1,0 +1,52 @@
+@media (min-width: 720px){
+#inputfield, #send{
+    position: absolute;
+}
+
+#bottom{
+    position: absolute;
+    bottom: 10px;
+
+}
+
+#bottomLeft{
+    width: 45vw;
+    height:30vh;
+}
+
+#bottomRight{
+
+    position: absolute;
+    left: 1400px;
+    width: 20vw;
+    height:45vh;
+
+}
+
+#message{
+    position: absolute;
+    bottom : 50px;
+    width: 43.9vw;
+    height:3vh;
+    background-color: #cebc9e;
+    left:10px;
+}
+
+#target{
+    border: 1px solid red;
+    position: absolute;
+    bottom:103px;
+    left:14px;
+    font-size: larger;
+    max-width: 43vw;
+    /* overflow-y:auto; */
+    max-height:180px;
+    min-width: 43.5vw;
+
+
+}
+
+
+
+
+}
