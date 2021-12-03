@@ -1,3 +1,8 @@
+
+
+var username = prompt("What is your name");
+
+
 let socket = io.connect();
 
 var bSendToMe = document.getElementById("btnSendToMe");
@@ -18,21 +23,28 @@ bSendToAll.addEventListener('click', sendToAll);
 function sendToMe(){
 
     // const message = document.querySelector('#message').value;
-    socket.emit('sendToMe', (message.value));
+    socket.emit('sendToMe', {message: message.value, name: username});
 
  }
 
 function sendToAll(){
-    socket.emit('sendToAll', (message.value));
-    console.log(message);
+
+
+
+    socket.emit('sendToAll', {message: message.value, name: username});
+
+    userList.innerHTML += '<br>'+username;
     
 }
 
 
 
+
+
 socket.on('displayMessage', (message) => {
-    target.innerHTML += '<br>'+message;
-    console.log(message);
+    target.innerHTML += '<br>'+message.name+ " : "+message.message;
+    
+    
 });
 
 

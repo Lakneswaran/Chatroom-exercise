@@ -6,6 +6,8 @@ const clientPath = `${__dirname}/../client`;
 app.use(express.static(clientPath));
 const server = http.createServer(app);
 
+let user =[];
+
 server.listen(8080, () =>{
     console.log("server running on "+8080);
  });
@@ -14,7 +16,7 @@ server.listen(8080, () =>{
 
 var counter = 1;
  io.on('connection', (socket) => {
-     
+   console.log(Array.from(io.sockets.sockets.keys()));
     console.log(counter+' someone connected');
     counter += 1 ;
 
@@ -25,6 +27,7 @@ var counter = 1;
     socket.on('sendToMe', (message) =>{
         socket.emit("displayMessage", (message)); 
     });
+    
 });
 
 
